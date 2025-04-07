@@ -1,11 +1,11 @@
-<mat-toolbar color="primary">
-    <button mat-button>
+<mat-toolbar color="primary" style="background-color: #77BC1F;">
+    <button mat-button (click)="myDrawer.toggle()">
         <mat-icon>menu</mat-icon>
     </button>
     <span style="flex: auto;"></span>
 
-    <button mat-button>Home</button>
-    <button mat-button>Perfil</button>
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/profile">Perfil</button>
 
     <button mat-button [matMenuTriggerFor] = "importMenu">
         <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
@@ -13,24 +13,38 @@
     </button>
 
     <mat-menu #importMenu>
-        <button mat-menu-item>Cargar Estudiantes</button>
-        <button mat-menu-item>Cargar Pagos</button>
+        <button mat-menu-item routerLink="/loadEstudiantes">Cargar Estudiantes</button>
+        <button mat-menu-item routerLink="/loadPagos">Cargar Pagos</button>
     </mat-menu>
 
-    <button mat-raised-button color="accent">Salir</button>
+    <button mat-raised-button color="accent" routerLink="/login">Salir</button>
 </mat-toolbar>
 <mat-drawer-container>
-    <mat-drawer opened="true" mode="side" position="start">
+    <mat-drawer #myDrawer opened="true" mode="side" position="start" style="border-right: 1px solid black; border-radius: 0px;">
         <mat-list>
             <mat-list-item>
-                <button mat-button>Estudiantes</button>
+                <button mat-button routerLink="/dashboard">
+                    <mat-icon>dashboard</mat-icon>
+                    Dashboard
+                </button>
             </mat-list-item>
             <mat-list-item>
-                <button mat-button>Pagos</button>
+                <button mat-button routerLink="/estudiantes">
+                    <mat-icon>dashboard</mat-icon>
+                    Estudiantes
+                </button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button routerLink="/pagos">
+                    <mat-icon>dashboard</mat-icon>
+                    Pagos
+                </button>
             </mat-list-item>
         </mat-list>
     </mat-drawer>
     <mat-drawer-content>
-        <div style="min-height: 600px;"></div>
+        <div style="min-height: 600px; padding: 10px 20px;">
+            <router-outlet/>
+        </div>
     </mat-drawer-content>
 </mat-drawer-container>
