@@ -23,10 +23,9 @@ import lombok.NoArgsConstructor;
 
 public class Pago {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Aquí le estamos diciendo que este campo se va a generar automáticamente en la BD
-    private String id;
+    private Long id;
 
     private LocalDate fecha;
 
