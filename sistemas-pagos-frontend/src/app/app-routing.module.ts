@@ -19,18 +19,20 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   {
     path: "admin", component: AdminTemplateComponent,
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       { path: "home", component: HomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "pagos", component: PagosComponent },
       { path: "estudiantes", component: EstudiantesComponent },
-      { path: "loadEstudiantes", component: LoadEstudiantesComponent,
-        canActivate: [AuthorizationGuard], data:{roles: ['ADMIN']}
-       },
-      { path: "loadPagos", component: LoadPagosComponent,
-        canActivate: [AuthorizationGuard], data:{roles: ['ADMIN']
-       },
+      {
+        path: "loadEstudiantes", component: LoadEstudiantesComponent,
+        canActivate: [AuthorizationGuard], data: { roles: ['ADMIN'] }
+      },
+      {
+        path: "loadPagos", component: LoadPagosComponent,
+        canActivate: [AuthorizationGuard], data: { roles: ['ADMIN'] }
+      },
       { path: "dashboard", component: DashboardComponent },
     ]
   },

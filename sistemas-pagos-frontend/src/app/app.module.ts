@@ -19,11 +19,15 @@ import { PagosComponent } from './pagos/pagos.component';
 import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -52,7 +56,12 @@ import { AuthorizationGuard } from './guards/authorization.guard';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule,
+    MatSortModule
   ],
   providers: [AuthGuard, AuthorizationGuard],
   bootstrap: [AppComponent]
