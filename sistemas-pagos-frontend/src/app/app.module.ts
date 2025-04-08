@@ -29,6 +29,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { EstudianteDetailsComponent } from './estudiante-details/estudiante-details.component';
+import { NewPagoComponent } from './new-pago/new-pago.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { EstudianteDetailsComponent } from './estudiante-details/estudiante-deta
     EstudiantesComponent,
     DashboardComponent,
     EstudianteDetailsComponent,
+    NewPagoComponent,
 
   ],
   imports: [
