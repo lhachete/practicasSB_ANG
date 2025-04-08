@@ -6,11 +6,12 @@
 
     <button mat-button routerLink="/admin/home">Home</button>
     <button mat-button routerLink="/admin/profile">Perfil</button>
-
+    @if (authService.roles.includes('ADMIN')) {
     <button mat-button [matMenuTriggerFor]="importMenu">
         <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
         Importar
     </button>
+    }
 
     <mat-menu #importMenu>
         <button mat-menu-item routerLink="/admin/loadEstudiantes">Cargar Estudiantes</button>
