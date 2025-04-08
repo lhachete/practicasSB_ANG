@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
+import { EstudianteDetailsComponent } from './estudiante-details/estudiante-details.component';
 
 
 
@@ -34,6 +35,7 @@ const routes: Routes = [
         canActivate: [AuthorizationGuard], data: { roles: ['ADMIN'] }
       },
       { path: "dashboard", component: DashboardComponent },
+      { path: "estudiante-detalles/:codigo", component: EstudianteDetailsComponent },
     ]
   },
 
